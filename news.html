@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News &amp; Insights | IIC Oil &amp; Gas</title>
+  <meta name="description" content="Company updates, petroleum product guides and trading compliance notes from IIC Oil & Gas, Dubai.">
+  <meta name="theme-color" content="#232225">
+  <meta property="og:title" content="IIC Oil & Gas — Trading & Services, Dubai">
+  <meta property="og:description" content="Petroleum products trading and upstream services from Sheikh Zayed Road, Dubai.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1633155617309-6201a8096e8a?auto=format&fit=crop&w=1200&q=70">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=28">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" data-header>
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="IIC Oil &amp; Gas, IIC Petroleum: home">
+        <img src="assets/img/logo-iic-oil-gas.png" alt="IIC Oil &amp; Gas, IIC Petroleum" width="900" height="277">
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="index.html#about">About Us</a>
+        <a class="nav__link" href="index.html#services">Services</a>
+        <a class="nav__link" href="products.html">Products</a>
+        <a class="nav__link" href="news.html" aria-current="page">News</a>
+        <a class="nav__link" href="index.html#contact">Contact Us</a>
+      </nav>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu" inert>
+      <nav aria-label="Mobile">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="index.html#about">About Us</a>
+        <a class="nav__link" href="index.html#services">Services</a>
+        <a class="nav__link" href="products.html">Products</a>
+        <a class="nav__link" href="news.html" aria-current="page">News</a>
+        <a class="nav__link" href="index.html#contact">Contact Us</a>
+      </nav>
+      <div class="nav__mobile-foot">
+        <a href="tel:+97148347004">+971 4 834 7004</a>
+        <a href="mailto:office@iicpetroleum.com">office@iicpetroleum.com</a>
+        <span>Al Shafar Park Tower, Sheikh Zayed Road, Dubai</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+        <div class="page-hero__media"><img src="https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?auto=format&fit=crop&w=2000&q=70" alt="" fetchpriority="high"></div>
+        <div class="container">
+          <ol class="breadcrumb" aria-label="Breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">News</li></ol>
+          <h1 id="page-title">News &amp; <span class="soft">insights</span></h1>
+          <p>Company updates, product guides and compliance notes from the IIC Oil &amp; Gas trading desk in Dubai.</p>
+        </div>
+      </section>
+
+    <div class="ticker" data-ticker role="region" aria-label="Latest news headlines">
+      <p class="ticker__label"><span class="ticker__dot" aria-hidden="true"></span>Latest News</p>
+      <div class="ticker__viewport"><div class="ticker__track"></div></div>
+      <button class="ticker__toggle" type="button" aria-pressed="false" aria-label="Pause headlines">
+        <svg class="icon ticker__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+        <svg class="icon ticker__play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+      </button>
+    </div>
+
+    <section class="container" aria-label="News articles" style="padding-bottom:clamp(64px,10vw,128px)">
+      <div class="news-toolbar">
+        <div class="filters" data-news-filters role="group" aria-label="Filter by category"></div>
+        <form class="search" id="news-search-form" role="search">
+          <label for="news-search" class="visually-hidden">Search news</label>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="news-search" type="search" placeholder="Search articles" autocomplete="off">
+        </form>
+      </div>
+      <p class="results-note" data-news-note role="status" aria-live="polite"></p>
+      <div class="news-grid" data-news-list style="margin-top:16px">
+        <noscript><p>Please enable JavaScript to browse our news.</p></noscript>
+      </div>
+      <div class="news-more"><button type="button" class="btn btn--outline" data-news-more hidden>Load more articles</button></div>
+
+      <div class="newsletter reveal" style="margin-top:clamp(64px,8vw,112px)">
+        <div>
+          <h2>Get market notes in your inbox.</h2>
+          <p>Occasional updates on product availability, guides and company news. No spam, and you can unsubscribe at any time.</p>
+        </div>
+        <form data-newsletter novalidate>
+          <label for="nl-email" class="visually-hidden">Email address</label>
+          <div class="row">
+            <input id="nl-email" type="email" placeholder="name@company.com" autocomplete="email" required>
+            <button class="btn btn--dark" type="submit">Subscribe <span class="btn__icon"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+          </div>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+      <svg class="footer__stripe" viewBox="0 0 260 260" aria-hidden="true"><path d="M60 0h80L260 110v80z" fill="#ffdb01"/><path d="M140 0h60l60 50v60z" fill="#4b4a4e"/></svg>
+      <div class="footer__top">
+        <p class="footer__tag">Driving Energy Forward<br><span class="soft">with Expertise, Innovation, and Trust.</span></p>
+        <div class="footer__grid2">
+          <div class="footer__col"><h2>Location</h2><p>Ground Floor, Al Shafar Park Tower<br>Sheikh Zayed Road<br>Dubai, UAE</p></div>
+          <div class="footer__col"><h2>Contact</h2><ul><li><a href="tel:+97148347004">+971 4 834 7004</a></li><li><a href="tel:8003241">Toll free 800 3241</a></li><li><a href="mailto:office@iicpetroleum.com">office@iicpetroleum.com</a></li></ul></div>
+        </div>
+        <div class="footer__grid2">
+          <div class="footer__col"><h2>Company</h2><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#services">Services</a></li><li><a href="products.html">Products</a></li><li><a href="news.html">News</a></li></ul></div>
+          <div class="footer__col"><h2>Hours</h2><p>Mon – Fri<br>9:00 AM – 5:00 PM</p></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__mark" aria-label="IIC Oil &amp; Gas">IIC Oil &amp; Gas<span class="yr" aria-hidden="true">©<span data-year>2026</span></span></p>
+        <div class="footer__legal">
+          <div class="crest"><img src="assets/img/iic-crest.png" alt="International Investment Consortium crest" width="142" height="100"><p>A subsidiary of<br>International Investment Consortium (IIC)</p></div>
+          <div class="social">
+            <a href="https://www.facebook.com" aria-label="IIC Oil &amp; Gas on Facebook" rel="noopener" target="_blank"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-3a4 4 0 0 0-4 4v3H6v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://twitter.com" aria-label="IIC Oil &amp; Gas on X (Twitter)" rel="noopener" target="_blank"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+            <a href="https://www.youtube.com" aria-label="IIC Oil &amp; Gas on YouTube" rel="noopener" target="_blank"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+          </div>
+          <p>© <span data-year>2026</span> IIC Oil &amp; Gas Trading LLC. All rights reserved.</p>
+          <nav class="footer__links" aria-label="Legal"><a href="#">Disclaimer</a><a href="#">Terms of Use</a><a href="#">Privacy Policy</a><a href="#">Copyright</a></nav>
+        </div>
+      </div>
+    </footer>
+
+  <script src="assets/js/news-data.js?v=28"></script>
+  <script src="assets/js/main.js?v=28"></script>
+</body>
+</html>
