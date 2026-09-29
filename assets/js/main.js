@@ -45,6 +45,118 @@
     sync();
   }
 
+  /* ---------- About "20+" video fill (video drawn inside the letters on a canvas) ---------- */
+  const figWrap = $(".about-big--video");
+  if (figWrap) {
+    const video = $(".about-big__video", figWrap);
+    const canvas = $(".about-big__canvas", figWrap);
+    const mask = $(".about-big__mask", figWrap);
+    const ctx = canvas.getContext && canvas.getContext("2d");
+    let raf = 0, visible = false, w = 0, h = 0, dpr = 1;
+
+    const size = () => {
+      const r = figWrap.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    };
+    const draw = () => {
+      if (!ctx || !w || video.readyState < 2) return false;
+      const cs = getComputedStyle(mask);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = "source-over";
+      ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#000";
+      const m = ctx.measureText(mask.textContent);
+      const top = (h - (m.actualBoundingBoxAscent + m.actualBoundingBoxDescent)) / 2 + m.actualBoundingBoxAscent;
+      ctx.fillText(mask.textContent, -m.actualBoundingBoxLeft + (w - (m.actualBoundingBoxLeft + m.actualBoundingBoxRight)) / 2, top);
+      // keep only the video pixels that fall inside the letters (cover-fit)
+      ctx.globalCompositeOperation = "source-in";
+      const vr = video.videoWidth / video.videoHeight, br = w / h;
+      const dw = vr > br ? h * vr : w, dh = vr > br ? h : w / vr;
+      ctx.drawImage(video, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      return true;
+    };
+    const loop = () => { if (draw()) figWrap.classList.add("is-filled"); if (visible && !video.paused) raf = requestAnimationFrame(loop); };
+    const start = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); };
+
+    if (ctx) {
+      size();
+      window.addEventListener("resize", () => { size(); draw(); }, { passive: true });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { size(); draw(); });
+      video.addEventListener("loadeddata", () => { if (draw()) figWrap.classList.add("is-filled"); });
+      video.addEventListener("play", start);
+      if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([en]) => {
+          visible = en.isIntersecting;
+          if (visible && !reduceMotion) { video.play().catch(() => {}); start(); } else video.pause();
+        }, { threshold: 0.1 }).observe(figWrap);
+      } else { visible = true; start(); }
+    }
+  }
+
+  /* ---------- About "20+" / "VISION": video drawn inside the letters on a canvas ---------- */
+  $$(".about-big--video").forEach((figWrap) => {
+    const video = $(".about-big__video", figWrap);
+    const canvas = $(".about-big__canvas", figWrap);
+    const mask = $(".about-big__mask", figWrap);
+    const ctx = canvas.getContext && canvas.getContext("2d");
+    let raf = 0, visible = false, w = 0, h = 0, dpr = 1;
+
+    const size = () => {
+      const r = canvas.getBoundingClientRect(); // includes the 16px bleed on each side
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    };
+    const draw = () => {
+      if (!ctx || !w || video.readyState < 2) return false;
+      const cs = getComputedStyle(mask);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = "source-over";
+      ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#000";
+      const text = cs.textTransform === "uppercase" ? mask.textContent.toUpperCase() : mask.textContent; // canvas ignores CSS text-transform
+      if ("letterSpacing" in ctx) ctx.letterSpacing = cs.letterSpacing === "normal" ? "0px" : cs.letterSpacing;
+      let m = ctx.measureText(text);
+      const tw = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
+      if (tw > w - 8) { // never let the drawn word outgrow its box
+        ctx.font = `${cs.fontWeight} ${parseFloat(cs.fontSize) * ((w - 8) / tw)}px ${cs.fontFamily}`;
+        m = ctx.measureText(text);
+      }
+      const top = (h - (m.actualBoundingBoxAscent + m.actualBoundingBoxDescent)) / 2 + m.actualBoundingBoxAscent;
+      ctx.fillText(text, -m.actualBoundingBoxLeft + (w - (m.actualBoundingBoxLeft + m.actualBoundingBoxRight)) / 2, top);
+      // keep only the video pixels that fall inside the letters (cover-fit)
+      ctx.globalCompositeOperation = "source-in";
+      const vr = video.videoWidth / video.videoHeight, br = w / h;
+      const dw = vr > br ? h * vr : w, dh = vr > br ? h : w / vr;
+      ctx.drawImage(video, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      return true;
+    };
+    const loop = () => { if (draw()) figWrap.classList.add("is-filled"); if (visible && !video.paused) raf = requestAnimationFrame(loop); };
+    const start = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(loop); };
+
+    if (ctx) {
+      size();
+      window.addEventListener("resize", () => { size(); draw(); }, { passive: true });
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { size(); draw(); });
+      video.addEventListener("loadeddata", () => { if (draw()) figWrap.classList.add("is-filled"); });
+      video.addEventListener("play", start);
+      if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([en]) => {
+          visible = en.isIntersecting;
+          if (visible && !reduceMotion) { video.play().catch(() => {}); start(); } else video.pause();
+        }, { threshold: 0.1 }).observe(figWrap);
+      } else { visible = true; start(); }
+    }
+  });
+
   /* ---------- Header: transparent over hero, solid once scrolled ---------- */
   const header = $("[data-header]");
   if (header) {

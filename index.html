@@ -8,14 +8,13 @@
   <meta name="theme-color" content="#232225">
   <meta property="og:title" content="IIC Oil & Gas — Trading & Services, Dubai">
   <meta property="og:description" content="Petroleum products trading and upstream services from Sheikh Zayed Road, Dubai.">
-  <meta property="og:image" content="https://iicpetroleum.com/assets/img/hero-poster.jpg?v=2">
+  <meta property="og:image" content="https://iicpetroleum.com/assets/img/hero4-poster.jpg">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="preload" as="image" href="assets/img/hero-poster.jpg?v=2">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=39">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;900&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=68">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,9 +77,9 @@
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-title">
         <div class="hero__media">
-          <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg?v=2" aria-hidden="true">
-            <source src="assets/video/hero-720.mp4?v=2" type="video/mp4" media="(max-width: 800px)">
-            <source src="assets/video/hero-1080.mp4?v=2" type="video/mp4">
+          <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero4-poster.jpg" aria-hidden="true">
+            <source src="assets/video/hero4-720.mp4" type="video/mp4" media="(max-width: 800px)">
+            <source src="assets/video/hero4-1080.mp4" type="video/mp4">
           </video>
         </div>
         <button class="hero__vidtoggle" type="button" data-hero-toggle aria-pressed="false" aria-label="Pause background video">
@@ -123,46 +122,50 @@
 
     <!-- ============ ABOUT ============ -->
     <section class="section container" id="about" aria-labelledby="about-title">
-      <div class="about__statement">
-        <div class="reveal"><span class="chip">About Us</span></div>
-        <h2 class="statement reveal" id="about-title" data-delay="80">
-          IIC Oil &amp; Gas combines <span class="soft">a global trading network</span> with full-cycle upstream capability, <span class="soft">from</span> exploration and drilling <span class="soft">to</span> operations, maintenance and supply.
-        </h2>
+      <div class="reveal"><span class="chip">About Us</span></div>
+
+      <div class="about-row about-row--intro">
+        <div class="about-row__figure reveal">
+          <div class="about-big about-big--video" aria-hidden="true">
+            <video class="about-big__video" autoplay muted loop playsinline preload="metadata" poster="assets/img/about-20-fill-poster.jpg?v=2">
+              <source src="assets/video/about-20-fill.mp4?v=2" type="video/mp4">
+            </video>
+            <canvas class="about-big__canvas"></canvas>
+            <span class="about-big__mask">20+</span>
+          </div>
+          <p class="about-big__label"><span class="visually-hidden">20+ </span>Countries served worldwide</p>
+        </div>
+        <div class="about-row__text reveal" data-delay="80">
+          <h2 class="statement" id="about-title">
+            IIC Oil &amp; Gas combines <span class="soft">a global trading network</span> with full-cycle upstream capability, <span class="soft">from</span> exploration and drilling <span class="soft">to</span> operations, maintenance and supply.
+          </h2>
+          <a class="btn btn--dark" href="#services">Our services <span class="btn__icon"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
       </div>
 
-      <div class="about__cards">
-        <article class="card card--stat reveal">
-          <p class="stat__num tabular">20+</p>
-          <p class="stat__label">Countries served worldwide</p>
-          <svg class="dotmap" viewBox="0 0 300 150" aria-hidden="true">
-            <defs>
-              <pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.4" fill="currentColor"/></pattern>
-              <clipPath id="globe"><path d="M20 70c10-30 40-50 70-48 18 1 20 14 36 12 20-2 22-18 48-16 30 3 44 20 64 18 22-2 30 8 36 24 5 14-8 20-20 26-16 8-12 26-30 30-20 4-26-12-44-8-16 4-10 26-30 28-18 2-22-20-38-30-12-8-28 0-40-8-16-10-58-6-52-28z"/></clipPath>
-            </defs>
-            <rect width="300" height="150" fill="url(#dots)" clip-path="url(#globe)" opacity=".55"/>
-            <g fill="#ffdb01" stroke="#232225" stroke-width="1.5">
-              <circle cx="178" cy="78" r="6"/><circle cx="120" cy="46" r="4"/><circle cx="236" cy="60" r="4"/><circle cx="80" cy="74" r="4"/><circle cx="208" cy="110" r="4"/>
-            </g>
-          </svg>
-          <a class="btn btn--dark" href="#services" style="align-self:flex-end;margin-top:12px">Our services <span class="btn__icon"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        </article>
-
-        <article class="card card--quote reveal" data-delay="80">
-          <h3 class="vision-label">Our Vision</h3>
-          <blockquote>
+      <div class="about-row about-row--vision">
+        <div class="about-row__text reveal">
+          <h3 class="visually-hidden">Our vision</h3>
+          <blockquote class="about-quote">
             Our vision is to be the most <span class="soft">entrepreneurially led,</span> technically competent <span class="soft">and</span> trusted <span class="soft">oil &amp; gas company, in the eyes of our customers, shareholders and people.</span>
           </blockquote>
-          <div class="by"><img src="assets/img/iic-crest@1x.png" srcset="assets/img/iic-crest@2x.png 2x, assets/img/iic-crest@3x.png 3x" alt="" width="112" height="48"><span><strong style="color:var(--ink)">IIC Oil &amp; Gas Trading LLC</strong><br>A subsidiary of International Investment Consortium (IIC)</span></div>
-        </article>
-
-        <article class="card card--photo reveal" data-delay="160">
-          <img src="https://images.unsplash.com/photo-1759922378219-1d31edb644f4?auto=format&fit=crop&w=900&q=70" alt="Field engineer in a hard hat and high-visibility vest on site" loading="lazy" width="900" height="1350">
-          <div class="card__caption">
-            <p>Honesty, trust and respect for all, backed by safety, agility and professionalism on every job.</p>
-            <small><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg> Our core values</small>
-          </div>
-        </article>
+        </div>
+        <div class="about-big about-big--word about-big--video reveal" data-delay="80" aria-hidden="true">
+          <video class="about-big__video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg?v=2">
+            <source src="assets/video/hero-720.mp4?v=2" type="video/mp4">
+          </video>
+          <canvas class="about-big__canvas"></canvas>
+          <span class="about-big__mask">Vision</span>
+        </div>
       </div>
+
+      <article class="values-panel reveal" aria-labelledby="values-title">
+        <p class="values-panel__label"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></svg> Our core values</p>
+        <h3 class="values-panel__title" id="values-title">Honesty, trust and respect for all, <span class="soft">backed by safety, agility and professionalism on every job.</span></h3>
+        <ul class="values-panel__list">
+          <li>Honesty</li><li>Trust</li><li>Respect</li><li>Safety</li><li>Agility</li><li>Professionalism</li>
+        </ul>
+      </article>
 
       <div class="stat-strip">
         <div class="card reveal"><p class="stat__num tabular">06</p><p class="stat__label">Integrated service lines</p></div>
@@ -232,7 +235,7 @@
         <div class="slide"><img src="https://images.unsplash.com/photo-1598408745613-178751e2ccde?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1678984240126-70bcddd7a228?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1749073668528-38ab64575f5d?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
-        <div class="slide"><img src="https://images.unsplash.com/photo-1722183704200-e96339975ba4?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1749073668528-38ab64575f5d?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1648369000096-109763c11e8e?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1759922378222-47ad736a174d?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
 
@@ -408,8 +411,8 @@
       </div>
     </footer>
 
-  <script src="assets/js/news-data.js?v=39"></script>
-  <script src="assets/js/prices.js?v=39"></script>
-  <script src="assets/js/main.js?v=39"></script>
+  <script src="assets/js/news-data.js?v=68"></script>
+  <script src="assets/js/prices.js?v=68"></script>
+  <script src="assets/js/main.js?v=68"></script>
 </body>
 </html>
