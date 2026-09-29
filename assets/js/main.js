@@ -77,6 +77,9 @@
       const vr = video.videoWidth / video.videoHeight, br = w / h;
       const dw = vr > br ? h * vr : w, dh = vr > br ? h : w / vr;
       ctx.drawImage(video, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      // optional darkening (data-darken="0..1"), applied only inside the letters
+      const dark = parseFloat(figWrap.dataset.darken || 0);
+      if (dark > 0) { ctx.globalCompositeOperation = "source-atop"; ctx.fillStyle = `rgba(20,20,22,${dark})`; ctx.fillRect(0, 0, w, h); }
       return true;
     };
     const loop = () => { if (draw()) figWrap.classList.add("is-filled"); if (visible && !video.paused) raf = requestAnimationFrame(loop); };
@@ -136,6 +139,9 @@
       const vr = video.videoWidth / video.videoHeight, br = w / h;
       const dw = vr > br ? h * vr : w, dh = vr > br ? h : w / vr;
       ctx.drawImage(video, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      // optional darkening (data-darken="0..1"), applied only inside the letters
+      const dark = parseFloat(figWrap.dataset.darken || 0);
+      if (dark > 0) { ctx.globalCompositeOperation = "source-atop"; ctx.fillStyle = `rgba(20,20,22,${dark})`; ctx.fillRect(0, 0, w, h); }
       return true;
     };
     const loop = () => { if (draw()) figWrap.classList.add("is-filled"); if (visible && !video.paused) raf = requestAnimationFrame(loop); };
