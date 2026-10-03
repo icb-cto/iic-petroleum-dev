@@ -9,6 +9,8 @@
    4. `date` is YYYY-MM-DD. Posts are sorted newest first automatically.
    5. `featured: true` pins a post to the big card (only the newest featured one is used).
    6. Optional `video` adds a video to the article (see the Berbera post).
+      `announcement: true` marks real company deals/partnerships; only these
+      appear in the thin news strip under the homepage hero.
    7. `body` is HTML. Use <h2 id="..."> for section headings — they build the
       "On this page" menu automatically.
 
@@ -22,6 +24,7 @@ const IMG = (id, w = 1400) => `https://images.unsplash.com/${id}?auto=format&fit
 window.IIC_NEWS = [
   {
     slug: "iic-partners-with-berbera-rfs-depot",
+    announcement: true,
     title: "IIC Oil & Gas partners with Berbera RFS Depot to back its next phase",
     category: "Company",
     date: "2026-09-28",
@@ -62,6 +65,7 @@ window.IIC_NEWS = [
   },
   {
     slug: "rotterdam-diesel-storage-agreement",
+    announcement: true,
     title: "IIC Oil & Gas secures diesel storage in the Port of Rotterdam",
     category: "Trading",
     date: "2026-09-24",
@@ -86,6 +90,7 @@ window.IIC_NEWS = [
   },
   {
     slug: "vinni-shipping-charter-agreement",
+    announcement: true,
     title: "12-month shipping agreement with Vinni V. Shipping",
     category: "Trading",
     date: "2026-09-24",
@@ -109,6 +114,7 @@ window.IIC_NEWS = [
   },
   {
     slug: "monarch-singapore-fujairah-charter",
+    announcement: true,
     title: "Tanker chartered to carry 200,000 tonnes of diesel from Singapore to Fujairah",
     category: "Trading",
     date: "2026-09-20",

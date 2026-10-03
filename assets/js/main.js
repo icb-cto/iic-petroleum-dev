@@ -396,7 +396,7 @@
       script.textContent = JSON.stringify({
         symbols: [{ proName: box.dataset.symbol, title: box.dataset.symbol.split(":")[1] }],
         showSymbolLogo: true,
-        colorTheme: "dark",
+        colorTheme: "light",
         isTransparent: true,
         displayMode: "adaptive",
         locale: "en"
@@ -527,7 +527,10 @@
   $$("[data-ticker]").forEach((ticker) => {
     if (!NEWS.length) { ticker.remove(); return; }
     const track = $(".ticker__track", ticker);
-    const items = NEWS.slice(0, 8).map((a) => `
+    // data-ticker="announcements" shows only real company announcements
+    const pool = ticker.dataset.ticker === "announcements" ? NEWS.filter((a) => a.announcement) : NEWS;
+    if (!pool.length) { ticker.remove(); return; }
+    const items = pool.slice(0, 8).map((a) => `
       <li class="ticker__item"><a href="${url(a)}">
         <span class="ticker__cat">${esc(a.category)}</span>
         <span class="ticker__title">${esc(a.title)}</span>

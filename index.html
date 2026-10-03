@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;900&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=70">
+  <link rel="stylesheet" href="assets/css/styles.css?v=87">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,11 +31,11 @@
       "addressLocality": "Dubai",
       "addressCountry": "AE"
     },
-    "openingHours": "Mo-Fr 09:00-17:00"
+    "openingHours": ["Mo-Fr 09:00-17:00", "Sa 11:00-15:00"]
   }
   </script>
 </head>
-<body>
+<body class="hero-light">
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ============ HEADER ============ -->
@@ -86,6 +86,12 @@
           <svg class="icon icon--sm vt-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
           <svg class="icon icon--sm vt-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
         </button>
+        <div class="hero__topbar">
+          <a class="hero__tollfree" href="tel:8003241" aria-label="Call us toll free on 800 3241">
+            <span class="hero__tollfree-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+            <span class="hero__tollfree-text"><small>Call us · Toll free</small><strong>800 3241</strong></span>
+          </a>
+        </div>
         <div class="hero__inner">
           <div>
             <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Dubai · Operating in 20+ countries</p>
@@ -93,7 +99,6 @@
             <p class="hero__sub">IIC Oil &amp; Gas Trading LLC</p>
           </div>
           <div class="hero__aside">
-            <p class="hero__kicker hero__kicker--contact"><span class="dot" aria-hidden="true"></span><span>Contact Us · <a href="tel:8003241">800 3241</a> (Toll Free)</span></p>
             <p>From refinery allocation to offshore operations, we supply the fuels and services that keep industry, aviation and shipping moving, all run from our office on Sheikh Zayed Road.</p>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
               <a class="btn btn--light" href="#contact">Get in Touch <span class="btn__icon"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
@@ -102,6 +107,15 @@
           </div>
         </div>
       </section>
+
+    <div class="ticker ticker--thin" data-ticker="announcements" role="region" aria-label="Company announcements">
+      <p class="ticker__label">News</p>
+      <div class="ticker__viewport"><div class="ticker__track"></div></div>
+      <button class="ticker__toggle" type="button" aria-pressed="false" aria-label="Pause headlines">
+        <svg class="icon ticker__pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+        <svg class="icon ticker__play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+      </button>
+    </div>
 
     <!-- ============ MARKET PRICES ============ -->
     <section class="prices" aria-labelledby="prices-title">
@@ -235,7 +249,7 @@
         <div class="slide"><img src="https://images.unsplash.com/photo-1598408745613-178751e2ccde?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1678984240126-70bcddd7a228?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1749073668528-38ab64575f5d?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
-        <div class="slide"><img src="https://images.unsplash.com/photo-1749073668528-38ab64575f5d?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
+        <div class="slide"><img src="https://images.unsplash.com/photo-1722183704200-e96339975ba4?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1648369000096-109763c11e8e?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
         <div class="slide"><img src="https://images.unsplash.com/photo-1759922378222-47ad736a174d?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy"></div>
 
@@ -319,7 +333,7 @@
             <div class="info-row"><span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><dt>Office</dt><dd>Ground Floor, Al Shafar Park Tower,<br>Sheikh Zayed Road, Dubai, UAE</dd></div></div>
             <div class="info-row"><span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><dt>Phone</dt><dd><a href="tel:+97148347004">+971 4 834 7004</a> · Toll free <a href="tel:8003241">800 3241</a></dd></div></div>
             <div class="info-row"><span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><dt>Email</dt><dd><a href="mailto:office@iicpetroleum.com">office@iicpetroleum.com</a></dd></div></div>
-            <div class="info-row"><span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><dt>Hours</dt><dd>Mon – Fri, 9:00 AM – 5:00 PM<br><span style="color:var(--text-muted);font-weight:400">Closed on UAE public holidays</span></dd></div></div>
+            <div class="info-row"><span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><dt>Hours</dt><dd>Mon – Fri, 9:00 AM – 5:00 PM<br>Saturday, 11:00 AM – 3:00 PM<br><span style="color:var(--text-muted);font-weight:400">Closed on UAE public holidays</span></dd></div></div>
           </dl>
         </div>
 
@@ -384,7 +398,7 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
-      <svg class="footer__stripe" viewBox="0 0 260 260" aria-hidden="true"><path d="M60 0h80L260 110v80z" fill="#ffdb01"/><path d="M140 0h60l60 50v60z" fill="#4b4a4e"/></svg>
+      <svg class="footer__stripe" viewBox="0 0 260 260" aria-hidden="true"><path d="M60 0h80L260 110v80z" fill="#ffdb01"/><path d="M140 0h60l60 50v60z" fill="#232225"/></svg>
       <div class="footer__top">
         <p class="footer__mark" aria-label="IIC Oil &amp; Gas, IIC Petroleum"><span class="footer__mark-name">IIC Oil &amp; Gas</span><span class="footer__mark-rule" aria-hidden="true"></span><span class="footer__mark-sub" aria-hidden="true"><span>I</span><span>I</span><span>C</span><span class="sp"></span><span>P</span><span>E</span><span>T</span><span>R</span><span>O</span><span>L</span><span>E</span><span>U</span><span>M</span></span><span class="yr" aria-hidden="true">©<span data-year>2026</span></span></p>
         <div class="footer__grid2">
@@ -393,7 +407,7 @@
         </div>
         <div class="footer__grid2">
           <div class="footer__col"><h2>Company</h2><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#services">Services</a></li><li><a href="products.html">Products</a></li><li><a href="news.html">News</a></li></ul></div>
-          <div class="footer__col"><h2>Hours</h2><p>Mon – Fri<br>9:00 AM – 5:00 PM</p></div>
+          <div class="footer__col"><h2>Hours</h2><p>Mon – Fri<br>9:00 AM – 5:00 PM</p><p style="margin-top:8px">Saturday<br>11:00 AM – 3:00 PM</p></div>
         </div>
       </div>
       <div class="footer__bottom">
@@ -411,8 +425,8 @@
       </div>
     </footer>
 
-  <script src="assets/js/news-data.js?v=70"></script>
-  <script src="assets/js/prices.js?v=70"></script>
-  <script src="assets/js/main.js?v=70"></script>
+  <script src="assets/js/news-data.js?v=87"></script>
+  <script src="assets/js/prices.js?v=87"></script>
+  <script src="assets/js/main.js?v=87"></script>
 </body>
 </html>
